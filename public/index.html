@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Controle Financeiro</h1>
+
+    <form id="formUsuario">
+        <h2>Cadastrar Usuário</h2>
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="text" name="telefone" placeholder="Telefone" maxlength="11">
+        <input type="date" name="data_nascimento" placeholder="Data de Nascimento">
+        <input type="text" name="cpf" placeholder="CPF" required maxlength="11">
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="password" name="senha" placeholder="Senha" required>
+        <div class="button-group">
+            <button type="submit">Cadastrar</button>
+        </div>
+    </form>
+    
+    <form id="formGasto">
+    <h2>Cadastrar Gasto</h2>
+    <input type="number" name="valor" placeholder="Valor" required>
+    <input type="date" name="data" required>
+    <input type="text" name="descricao" placeholder="Descrição" required>
+    <select name="id_categoria" required>
+        <option value="1">Gasto Fixo</option>
+        <option value="2">Comida</option>
+        <option value="3">Compra Online</option>
+        <option value="4">Transporte</option>
+        <option value="5">Lazer</option>
+    </select>
+    <input type="number" name="id_usuario" placeholder="ID do Usuário" required>
+    <button type="submit">Cadastrar Gasto</button>
+</form>
+
+    <div id="listaUsuarios">
+        <h2>Usuários Cadastrados</h2>
+        <ul id="usuarios"></ul>
+    </div>
+
+    <div id="gastosPorUsuario">
+        <h2>Total de Gastos por Usuário</h2>
+        <ul id="listaGastos"></ul>
+    </div>
+
+    <div class="button-actions">
+        <div class="button-wrapper">
+            <button id="refreshUsuarios">Atualizar Usuários</button>
+        </div>
+        <div class="button-wrapper">
+            <button id="refreshGastos">Atualizar Gastos</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
